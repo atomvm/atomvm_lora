@@ -223,7 +223,7 @@ init_lora(SPI, Config) ->
 
     ok = set_mode(SPI, standby),
 
-    GPIO = gpio:open(),
+    GPIO = gpio:start(),
     ok = maybe_set_irq(SPI, GPIO, get_irq(Config)),
     ok = maybe_reset(GPIO, maps:get(reset, Config, undefined)).
 
