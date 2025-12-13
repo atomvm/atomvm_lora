@@ -148,7 +148,7 @@ get_module(Config) ->
     end.
 
 %% @private
-get_or_load_spi(SPI) when is_pid(SPI) ->
+get_or_load_spi(SPI) when is_pid(SPI) orelse is_port(SPI) ->
     SPI;
 get_or_load_spi(SPIConfig) when is_map(SPIConfig) ->
     get_or_load_spi(maps:to_list(SPIConfig));
