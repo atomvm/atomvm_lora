@@ -50,7 +50,7 @@ For example, to configure the 4-wire SPI interface to use the ESP32 HSPI IOMUX p
         },
         device_config => #{
             my_sx127x => #{
-                spi_cs => 18,
+                cs => 18,
                 clock_speed_hz => 1000000,
                 address_len_bits => 8,
                 mode => 0
@@ -70,7 +70,7 @@ In addition to an SPI instance, the driver is initialized with a map, containing
 
     %% erlang
     LoraConfig = #{
-        spi => spi,
+        spi => SPI,
         frequency => freq_915mhz,
         bandwidth => bw_125khz,
         irq => 26,
@@ -118,7 +118,7 @@ Choosing the right parameters for LoRa communications can seem to be more of an 
 * The packet size requirements for your application, i.e., how large you want your messages to be;
 * The range of your transmissions, i.e., the distance between your senders and receivers, and how many obstacles there are in your area.
 
-TODO: Provide guidance for parameter selection
+<!-- TODO: Provide guidance for parameter selection -->
 
 ## Broadcasting Packets
 
